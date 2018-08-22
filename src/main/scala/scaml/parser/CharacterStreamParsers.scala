@@ -1,25 +1,67 @@
 package scaml.parser
 
+import atto._
+import Atto._
+import cats.implicits._
+
 /**
   * A YAML character stream may contain several documents. Each document is completely independent from the rest.
-  */
-/**
-  * e- A production matching no characters.
-  * c- A production starting and ending with a special character.
-  * b- A production matching a single line break.
-  * nb- A production starting and ending with a non-break character.
-  * s- A production starting and ending with a white space character.
-  * ns- A production starting and ending with a non-space character.
-  * l- A production matching complete line(s).
-  * X-Y- A production starting with an X- character and ending with a Y- character, where X- and Y- are any of the
-  * above prefixes.
-  * X+, X-Y+ A production as above, with the additional property that the matched content indentation level is greater
-  * than the specified n parameter.
   */
 object CharacterStreamParsers {
 
   // Documents
+  // A YAML character stream may contain several documents. Each document is completely independent from the rest.
+
+  /**
+    * [202]
+    */
+  val lDocumentPrefix: Parser[String] = ???
+
+  /**
+    * [203]
+    */
+  val cDirectivesEnd: Parser[String] = ???
+
+  /**
+    * [204]
+    */
+  val cDocumentEnd: Parser[String] = ???
+
+  /**
+    * [205]
+    */
+  val lDocumentSuffix: Parser[String] = ???
+
+  /**
+    * [206]
+    */
+  val cForbidden: Parser[String] = ???
+
+  /**
+    * [207]
+    */
+  val lBareDocument: Parser[String] = ???
+
+  /**
+    * [208]
+    */
+  val lExplicitDocument: Parser[String] = ???
+
+  /**
+    * [209]
+    */
+  val lDirectiveDocument: Parser[String] = ???
 
   // Streams
+
+  /**
+    * [210]
+    */
+  val lAnyDocument: Parser[String] = ???
+
+  /**
+    * [211]
+    */
+  val lYamlStream: Parser[String] = ???
 
 }
